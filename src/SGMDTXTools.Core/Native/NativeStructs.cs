@@ -30,3 +30,27 @@ public struct POINT
 
     public override string ToString() => $"({X},{Y})";
 }
+
+[StructLayout(LayoutKind.Sequential)]
+public struct MOUSEINPUT
+{
+    public int dx;
+    public int dy;
+    public uint mouseData;
+    public uint dwFlags;
+    public uint time;
+    public UIntPtr dwExtraInfo;
+}
+
+[StructLayout(LayoutKind.Explicit)]
+public struct InputUnion
+{
+    [FieldOffset(0)] public MOUSEINPUT mi;
+}
+
+[StructLayout(LayoutKind.Sequential)]
+public struct INPUT
+{
+    public uint type;
+    public InputUnion u;
+}

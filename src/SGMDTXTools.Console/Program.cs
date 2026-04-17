@@ -12,7 +12,7 @@ class Program
     private static DesktopDcCapturer _capturer = null!;
     private static GridOverlay _gridOverlay = null!;
     private static KnowledgeManager _knowledge = null!;
-    private static PostMessageInputSimulator _inputSimulator = null!;
+    private static SendInputSimulator _inputSimulator = null!;
     private static CancellationTokenSource _cts = new();
     private static string _processName = string.Empty;
 
@@ -55,7 +55,7 @@ class Program
 
             string knowledgeDir = Path.Combine(Directory.GetCurrentDirectory(), "knowledge");
             _knowledge = new KnowledgeManager(Log.Logger, knowledgeDir);
-            _inputSimulator = new PostMessageInputSimulator(Log.Logger, _gridOverlay);
+            _inputSimulator = new SendInputSimulator(Log.Logger, _gridOverlay);
 
             // 5. Ctrl+C 优雅退出
             System.Console.CancelKeyPress += (_, e) =>

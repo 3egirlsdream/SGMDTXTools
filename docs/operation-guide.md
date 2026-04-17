@@ -82,7 +82,7 @@ click <坐标> [right]
 
 - 左键点击：`click F8` 或 `click 100,200`
 - 右键点击：`click F8 right` 或 `click 100,200 right`
-- 内部流程：WM_MOUSEMOVE → 延迟 → WM_BUTTONDOWN → 延迟 → WM_BUTTONUP
+- 内部流程：SetCursorPos(目标屏幕坐标) → 延迟 → SendInput(MOUSEEVENTF_LEFTDOWN) → 延迟 → SendInput(MOUSEEVENTF_LEFTUP)
 
 ### dblclick - 双击
 
@@ -92,7 +92,7 @@ dblclick <坐标>
 
 - 示例：`dblclick E5` 或 `dblclick 300,400`
 - 仅支持左键双击
-- 内部流程：WM_MOUSEMOVE → LBUTTONDOWN → LBUTTONUP → 间隔 → LBUTTONDBLCLK → LBUTTONUP
+- 内部流程：SetCursorPos → 延迟 → SendInput(LEFTDOWN) → 延迟 → SendInput(LEFTUP) → 间隔 → SendInput(LEFTDOWN) → 延迟 → SendInput(LEFTUP)
 
 ### drag - 拖拽
 
@@ -103,7 +103,7 @@ drag <起点> <终点>
 - 示例：`drag A1 J18` 或 `drag 100,200 500,600`
 - 支持网格和像素坐标混用：`drag F8 300,400`
 - 默认20步线性插值，拖拽过程中保持左键按下
-- 内部流程：移动到起点 → LBUTTONDOWN → 逐步MOUSEMOVE(带MK_LBUTTON) → LBUTTONUP
+- 内部流程：SetCursorPos(起点) → SendInput(LEFTDOWN) → 循环SetCursorPos(插值坐标) → SendInput(LEFTUP)
 
 ### scroll - 滚轮
 
@@ -123,7 +123,7 @@ moveto <坐标>
 ```
 
 - 示例：`moveto C3` 或 `moveto 200,300`
-- 仅发送 WM_MOUSEMOVE，不按键
+- 仅用 SetCursorPos 移动鼠标到目标位置，不点击
 
 ---
 
@@ -142,8 +142,8 @@ moveto <坐标>
  (窗口定位)     (截图服务)      (输入模拟)
      │               │               │
      ▼               ▼               ▼
-  User32.dll      Gdi32.dll    PostMessage
-  (EnumWindows)   (BitBlt)     (WM_MOUSE*)
+  User32.dll      Gdi32.dll    SendInput
+  (EnumWindows)   (BitBlt)     (硬件级注入)
 ```
 
 ### 核心服务
@@ -153,7 +153,7 @@ moveto <坐标>
 | 窗口定位 | `ProcessWindowLocator` | 按进程名查找窗口，获取句柄和客户区信息 |
 | 截图 | `DesktopDcCapturer` | Desktop DC + BitBlt 截图，支持定时截图 |
 | 网格叠加 | `GridOverlay` | 网格绘制、坐标互转(GridRef <-> Pixel) |
-| 输入模拟 | `PostMessageInputSimulator` | PostMessage 发送鼠标消息到窗口 |
+| 输入模拟 | `SendInputSimulator` | SetCursorPos + SendInput 硬件级输入注入（需前台窗口） |
 | 知识库 | `KnowledgeManager` | Markdown 知识文件的读写和搜索 |
 | DPI | `DpiHelper` | PerMonitorV2 DPI 感知 |
 
@@ -180,7 +180,7 @@ SGMDTXTools/
 │   │   │   ├── User32.cs          # user32.dll (窗口/输入)
 │   │   │   ├── Gdi32.cs           # gdi32.dll (图形)
 │   │   │   ├── Shcore.cs          # shcore.dll (DPI)
-│   │   │   └── NativeStructs.cs   # RECT, POINT 结构体
+│   │   │   └── NativeStructs.cs   # RECT, POINT, INPUT 结构体
 │   │   ├── Models/                # 数据模型
 │   │   │   ├── WindowInfo.cs      # 窗口信息
 │   │   │   ├── CaptureResult.cs   # 截图结果
@@ -196,6 +196,7 @@ SGMDTXTools/
 │   │   │   ├── DesktopDcCapturer.cs
 │   │   │   ├── GridOverlay.cs
 │   │   │   ├── IInputSimulator.cs
+│   │   │   ├── SendInputSimulator.cs
 │   │   │   ├── PostMessageInputSimulator.cs
 │   │   │   ├── KnowledgeManager.cs
 │   │   │   └── DpiHelper.cs
@@ -217,7 +218,8 @@ SGMDTXTools/
 ## 注意事项
 
 1. **运行环境**：仅支持 Windows（依赖 Win32 API），需要 .NET 8.0 运行时
-2. **PostMessage 特性**：消息发送到窗口消息队列，不需要窗口在前台，但目标窗口必须处理标准鼠标消息
+2. **SendInput 特性**：通过硬件级事件注入模拟输入，操作时自动将游戏窗口激活到前台，鼠标会被临时占用。如果游戏以管理员权限运行，本工具也需要以管理员权限启动
 3. **DPI 感知**：已设置 PerMonitorV2，坐标使用物理像素，无需手动缩放
 4. **日志**：控制台输出 Info 级别以上，文件记录 Debug 级别以上（`logs/` 目录，每日滚动，保留30天）
 5. **Ctrl+C**：支持优雅退出，长时间操作（拖拽、定时截图等）会响应取消请求
+6. **虚拟化环境**：在 Parallels 等虚拟机环境中运行安卓模拟器时，SendInput 事件可能被虚拟化层拦截导致游戏无响应。建议在真实 Windows 物理机或支持硬件直通的内置虚拟化环境（如 Hyper-V with Enhanced Session）中使用
