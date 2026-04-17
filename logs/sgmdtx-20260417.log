@@ -1,0 +1,431 @@
+[2026-04-17 10:28:21.697 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 10:28:21.757 WRN] [] SetProcessDpiAwarenessContext(PerMonitorV2)返回false, 尝试SetProcessDPIAware后备方案
+[2026-04-17 10:28:21.761 INF] [] DPI感知后备方案: SetProcessDPIAware=true
+[2026-04-17 10:28:48.283 INF] [SGMDTXTools.Console.Program] 目标进程: notepad
+[2026-04-17 10:28:55.051 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: notepad
+[2026-04-17 10:28:55.068 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [5348]
+[2026-04-17 10:28:55.075 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,133), ClientSize=573x534
+[2026-04-17 10:28:55.076 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:28:55.078 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF058E, PID=5348
+[2026-04-17 10:28:55.078 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C04BE, PID=5348
+[2026-04-17 10:28:55.078 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x205C4, PID=5348
+[2026-04-17 10:28:55.078 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1002D4, PID=5348
+[2026-04-17 10:28:55.078 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1F04D4, PID=5348
+[2026-04-17 10:28:55.078 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1204C4, PID=5348
+[2026-04-17 10:28:55.080 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:28:55.082 DBG] [] 窗口DPI缩放: Handle=0x405CA, DPI=96, Scale=1.00
+[2026-04-17 10:29:05.104 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: notepad
+[2026-04-17 10:29:05.107 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [5348]
+[2026-04-17 10:29:05.108 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,133), ClientSize=573x534
+[2026-04-17 10:29:05.108 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:29:05.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF058E, PID=5348
+[2026-04-17 10:29:05.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C04BE, PID=5348
+[2026-04-17 10:29:05.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x205C4, PID=5348
+[2026-04-17 10:29:05.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1002D4, PID=5348
+[2026-04-17 10:29:05.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1F04D4, PID=5348
+[2026-04-17 10:29:05.111 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1204C4, PID=5348
+[2026-04-17 10:29:05.111 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:29:05.128 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,133), ClientSize=573x534
+[2026-04-17 10:29:05.128 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] 开始截图: 窗口=0x405CA, 区域=(910,133,573x534)
+[2026-04-17 10:29:05.146 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] BitBlt完成, 耗时=17ms
+[2026-04-17 10:29:05.172 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图完成: 尺寸=573x534, 大小=10KB, 耗时=17ms
+[2026-04-17 10:29:05.180 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图保存: C:\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_102905_172.png, 尺寸=573x534, 耗时=17ms
+[2026-04-17 10:29:13.253 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: notepad
+[2026-04-17 10:29:13.261 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [5348]
+[2026-04-17 10:29:13.262 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,133), ClientSize=573x534
+[2026-04-17 10:29:13.262 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:29:13.263 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF058E, PID=5348
+[2026-04-17 10:29:13.264 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C04BE, PID=5348
+[2026-04-17 10:29:13.264 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x205C4, PID=5348
+[2026-04-17 10:29:13.264 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1002D4, PID=5348
+[2026-04-17 10:29:13.264 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1F04D4, PID=5348
+[2026-04-17 10:29:13.264 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1204C4, PID=5348
+[2026-04-17 10:29:13.264 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:29:13.268 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 开始定时截图: 间隔=5s, 输出=C:\Mac\Home\Documents\SGMDTXTools\screenshots
+[2026-04-17 10:29:13.274 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,133), ClientSize=573x534
+[2026-04-17 10:29:13.275 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] 开始截图: 窗口=0x405CA, 区域=(910,133,573x534)
+[2026-04-17 10:29:13.296 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] BitBlt完成, 耗时=20ms
+[2026-04-17 10:29:13.302 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图完成: 尺寸=573x534, 大小=10KB, 耗时=20ms
+[2026-04-17 10:29:13.306 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图保存: C:\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_102913_302.png, 尺寸=573x534, 耗时=20ms
+[2026-04-17 10:29:13.308 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] 定时截图 #1: C:\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_102913_302.png
+[2026-04-17 10:29:17.444 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 停止定时截图: 成功=1, 失败=0
+[2026-04-17 10:29:24.928 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: notepad
+[2026-04-17 10:29:24.936 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [5348]
+[2026-04-17 10:29:24.937 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,133), ClientSize=573x534
+[2026-04-17 10:29:24.940 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:29:24.945 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF058E, PID=5348
+[2026-04-17 10:29:24.945 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C04BE, PID=5348
+[2026-04-17 10:29:24.946 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x205C4, PID=5348
+[2026-04-17 10:29:24.946 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1002D4, PID=5348
+[2026-04-17 10:29:24.946 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1F04D4, PID=5348
+[2026-04-17 10:29:24.946 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1204C4, PID=5348
+[2026-04-17 10:29:24.946 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:29:24.949 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始监控窗口位置: Handle=0x405CA
+[2026-04-17 10:29:24.951 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,133), ClientSize=573x534
+[2026-04-17 10:29:24.952 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(910,133,573x534)]
+[2026-04-17 10:29:26.973 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(910,150), ClientSize=573x517
+[2026-04-17 10:29:26.974 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(910,150,573x517)]
+[2026-04-17 10:29:27.479 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(803,107), ClientSize=573x517
+[2026-04-17 10:29:27.479 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(803,107,573x517)]
+[2026-04-17 10:29:27.995 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(800,106), ClientSize=573x517
+[2026-04-17 10:29:27.996 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(800,106,573x517)]
+[2026-04-17 10:29:30.032 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(764,131), ClientSize=573x517
+[2026-04-17 10:29:30.033 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(764,131,573x517)]
+[2026-04-17 10:29:30.553 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(637,202), ClientSize=573x517
+[2026-04-17 10:29:30.554 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(637,202,573x517)]
+[2026-04-17 10:29:31.066 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(803,159), ClientSize=573x517
+[2026-04-17 10:29:31.066 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(803,159,573x517)]
+[2026-04-17 10:29:31.584 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(719,263), ClientSize=573x517
+[2026-04-17 10:29:31.584 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(719,263,573x517)]
+[2026-04-17 10:29:32.088 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(697,234), ClientSize=573x517
+[2026-04-17 10:29:32.088 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(697,234,573x517)]
+[2026-04-17 10:29:32.593 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(721,159), ClientSize=573x517
+[2026-04-17 10:29:32.594 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(721,159,573x517)]
+[2026-04-17 10:29:33.097 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(718,161), ClientSize=573x517
+[2026-04-17 10:29:33.097 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(718,161,573x517)]
+[2026-04-17 10:29:34.619 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(718,161), ClientSize=744x517
+[2026-04-17 10:29:34.619 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(718,161,744x517)]
+[2026-04-17 10:29:35.124 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(718,161), ClientSize=749x517
+[2026-04-17 10:29:35.124 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='无标题 - Notepad', Rect=(718,161,749x517)]
+[2026-04-17 10:29:55.909 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(708,201), ClientSize=749x517
+[2026-04-17 10:29:55.912 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 窗口位置变化: [Handle=0x405CA, PID=5348, Process='Notepad', Title='*无标题 - Notepad', Rect=(708,201,749x517)]
+[2026-04-17 10:29:59.582 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 停止监控窗口位置: Handle=0x405CA
+[2026-04-17 10:30:07.438 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: notepad
+[2026-04-17 10:30:07.442 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [5348]
+[2026-04-17 10:30:07.443 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(708,201), ClientSize=749x517
+[2026-04-17 10:30:07.443 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='*无标题 - Notepad', Rect=(708,201,749x517)]
+[2026-04-17 10:30:07.444 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF058E, PID=5348
+[2026-04-17 10:30:07.445 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C04BE, PID=5348
+[2026-04-17 10:30:07.445 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x205C4, PID=5348
+[2026-04-17 10:30:07.445 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1002D4, PID=5348
+[2026-04-17 10:30:07.445 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1F04D4, PID=5348
+[2026-04-17 10:30:07.445 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1204C4, PID=5348
+[2026-04-17 10:30:07.445 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='*无标题 - Notepad', Rect=(708,201,749x517)]
+[2026-04-17 10:30:21.630 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 12:29:47.565 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 12:29:47.591 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 12:29:52.708 INF] [SGMDTXTools.Console.Program] 目标进程: notepad
+[2026-04-17 12:29:52.715 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=C:\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 12:30:12.316 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 列出知识文件: 共10个
+[2026-04-17 12:30:19.317 INF] [SGMDTXTools.Core.Services.KnowledgeManager] 合并知识库: 10个文件, 总长度=15720字符
+[2026-04-17 12:31:27.346 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: notepad
+[2026-04-17 12:31:27.365 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [5348]
+[2026-04-17 12:31:27.372 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(708,201), ClientSize=749x517
+[2026-04-17 12:31:27.373 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='*无标题 - Notepad', Rect=(708,201,749x517)]
+[2026-04-17 12:31:27.375 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF058E, PID=5348
+[2026-04-17 12:31:27.376 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C04BE, PID=5348
+[2026-04-17 12:31:27.376 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x205C4, PID=5348
+[2026-04-17 12:31:27.376 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1002D4, PID=5348
+[2026-04-17 12:31:27.376 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1F04D4, PID=5348
+[2026-04-17 12:31:27.376 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1204C4, PID=5348
+[2026-04-17 12:31:27.377 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0x405CA, PID=5348, Process='notepad', Title='*无标题 - Notepad', Rect=(708,201,749x517)]
+[2026-04-17 12:31:27.389 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0x405CA, ClientOrigin=(708,201), ClientSize=749x517
+[2026-04-17 12:31:27.389 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] 开始截图: 窗口=0x405CA, 区域=(708,201,749x517)
+[2026-04-17 12:31:27.416 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] BitBlt完成, 耗时=26ms
+[2026-04-17 12:31:27.442 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图完成: 尺寸=749x517, 大小=18KB, 耗时=26ms
+[2026-04-17 12:31:27.445 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图保存: C:\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_123127_441.png, 尺寸=749x517, 耗时=26ms
+[2026-04-17 12:31:27.493 DBG] [SGMDTXTools.Core.Services.GridOverlay] 网格绘制完成: 图片=749x517, 网格=10x18, 单元格=74.9x28.7
+[2026-04-17 12:31:27.502 INF] [SGMDTXTools.Core.Services.GridOverlay] 网格截图已保存: C:\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_123127_441_grid.png, 尺寸=749x517, 网格=10x18
+[2026-04-17 14:02:20.772 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:02:21.024 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:02:31.567 INF] [SGMDTXTools.Console.Program] 目标进程: com.bilibili.nslg
+[2026-04-17 14:02:31.590 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=C:\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 14:02:37.484 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:02:37.538 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:02:37.569 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(351,217), ClientSize=1024x512
+[2026-04-17 14:02:37.575 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(351,217,1024x512)]
+[2026-04-17 14:02:37.598 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:02:37.598 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:02:37.599 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:02:37.599 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:02:37.600 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:02:37.600 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:02:37.600 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:02:37.601 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:02:37.601 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:02:37.602 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:02:37.603 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:02:37.603 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:02:37.604 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:02:37.604 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:02:37.604 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:02:37.604 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:02:37.604 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:02:37.604 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:02:37.604 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:02:37.605 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:02:37.605 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:02:37.608 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(351,217,1024x512)]
+[2026-04-17 14:02:37.704 DBG] [] 窗口DPI缩放: Handle=0xC0568, DPI=96, Scale=1.00
+[2026-04-17 14:02:57.695 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:02:57.703 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:02:57.706 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(351,217), ClientSize=1024x512
+[2026-04-17 14:02:57.706 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(351,217,1024x512)]
+[2026-04-17 14:02:57.963 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:02:57.963 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:02:57.963 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:02:57.963 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:02:57.964 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:02:57.964 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:02:57.965 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:02:57.965 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:02:57.965 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:02:57.965 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:02:57.966 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:02:57.966 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:02:57.971 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:02:57.973 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:02:57.975 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:02:57.976 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:02:57.976 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:02:57.977 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:02:57.978 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:02:57.978 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:02:57.978 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:02:57.979 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(351,217,1024x512)]
+[2026-04-17 14:02:58.108 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(351,217), ClientSize=1024x512
+[2026-04-17 14:02:58.108 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] 开始截图: 窗口=0xC0568, 区域=(351,217,1024x512)
+[2026-04-17 14:02:58.148 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] BitBlt完成, 耗时=38ms
+[2026-04-17 14:02:58.224 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图完成: 尺寸=1024x512, 大小=47KB, 耗时=38ms
+[2026-04-17 14:02:58.273 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图保存: C:\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_140258_224.png, 尺寸=1024x512, 耗时=38ms
+[2026-04-17 14:03:21.439 INF] [SGMDTXTools.Console.Program] 收到Ctrl+C, 准备退出...
+[2026-04-17 14:03:26.248 INF] [SGMDTXTools.Console.Program] 收到Ctrl+C, 准备退出...
+[2026-04-17 14:03:26.249 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:48:28.277 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:48:28.314 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:48:28.314 INF] [SGMDTXTools.Console.Program] 目标进程: com.bilibili.nslg
+[2026-04-17 14:48:28.316 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=\\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 14:48:28.384 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:48:28.398 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:48:28.402 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:48:28.403 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:48:28.404 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:48:28.405 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:48:28.408 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(-32000,-32000), ClientSize=0x0
+[2026-04-17 14:48:28.409 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xC0568, Title='三国：谋定天下'
+[2026-04-17 14:48:28.409 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:48:28.409 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:48:28.410 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:48:28.410 WRN] [SGMDTXTools.Core.Services.ProcessWindowLocator] 进程 'com.bilibili.nslg' 正在运行但未找到可见窗口
+[2026-04-17 14:48:28.411 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:48:40.555 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:48:40.611 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:48:40.611 ERR] [SGMDTXTools.Console.Program] 进程名不能为空
+[2026-04-17 14:48:40.611 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:54:20.933 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:54:20.978 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:54:20.979 INF] [SGMDTXTools.Console.Program] 目标进程: com.bilibili.nslg
+[2026-04-17 14:54:20.982 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=\\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 14:54:21.073 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:54:21.091 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:54:21.096 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:54:21.098 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:54:21.098 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:54:21.098 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:54:21.098 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:54:21.098 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:54:21.098 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:54:21.098 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:54:21.099 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:54:21.099 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:54:21.101 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:54:21.103 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(-32000,-32000), ClientSize=0x0
+[2026-04-17 14:54:21.105 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xC0568, Title='三国：谋定天下'
+[2026-04-17 14:54:21.105 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:54:21.105 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:54:21.105 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:54:21.105 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:54:21.105 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:54:21.105 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:54:21.106 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:54:21.106 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:54:21.106 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:54:21.106 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:54:21.106 WRN] [SGMDTXTools.Core.Services.ProcessWindowLocator] 进程 'com.bilibili.nslg' 正在运行但未找到可见窗口
+[2026-04-17 14:54:21.106 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:54:21.108 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:54:21.108 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:54:21.108 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:54:21.108 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:54:21.108 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(-32000,-32000), ClientSize=0x0
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xC0568, Title='三国：谋定天下'
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:54:21.109 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:54:21.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:54:21.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:54:21.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:54:21.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:54:21.110 WRN] [SGMDTXTools.Core.Services.ProcessWindowLocator] 进程 'com.bilibili.nslg' 正在运行但未找到可见窗口
+[2026-04-17 14:54:21.110 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(-32000,-32000), ClientSize=0x0
+[2026-04-17 14:54:21.112 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xC0568, Title='三国：谋定天下'
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:54:21.113 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:54:21.113 WRN] [SGMDTXTools.Core.Services.ProcessWindowLocator] 进程 'com.bilibili.nslg' 正在运行但未找到可见窗口
+[2026-04-17 14:54:21.139 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:54:58.704 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:54:58.797 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:54:58.800 INF] [SGMDTXTools.Console.Program] 目标进程: NSLG
+[2026-04-17 14:54:58.802 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=\\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 14:54:58.968 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: NSLG
+[2026-04-17 14:54:59.000 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [14408]
+[2026-04-17 14:54:59.007 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2D048E, PID=14408
+[2026-04-17 14:54:59.008 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x405E4, PID=14408
+[2026-04-17 14:54:59.008 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xB0542, PID=14408
+[2026-04-17 14:54:59.008 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xB0516, PID=14408
+[2026-04-17 14:54:59.009 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x200698, PID=14408
+[2026-04-17 14:54:59.009 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x210230, PID=14408
+[2026-04-17 14:54:59.009 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2A045E, PID=14408
+[2026-04-17 14:54:59.014 WRN] [SGMDTXTools.Core.Services.ProcessWindowLocator] 进程 'NSLG' 正在运行但未找到可见窗口
+[2026-04-17 14:54:59.021 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:55:11.205 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:55:11.276 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:55:11.277 ERR] [SGMDTXTools.Console.Program] 进程名不能为空
+[2026-04-17 14:55:11.277 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:58:06.405 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:58:06.449 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:58:06.450 INF] [SGMDTXTools.Console.Program] 目标进程: com.bilibili.nslg
+[2026-04-17 14:58:06.451 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=\\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 14:58:06.537 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:58:06.547 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:58:06.551 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(930,112), ClientSize=1024x512
+[2026-04-17 14:58:06.553 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(930,112,1024x512)]
+[2026-04-17 14:58:06.555 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:58:06.555 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:58:06.555 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:58:06.555 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:58:06.555 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:58:06.555 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:58:06.555 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:58:06.556 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:58:06.557 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:58:06.557 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:58:06.557 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:58:06.557 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:58:06.557 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:58:06.557 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:58:06.558 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(930,112,1024x512)]
+[2026-04-17 14:58:06.582 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:58:22.442 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:58:22.610 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:58:22.611 INF] [SGMDTXTools.Console.Program] 目标进程: com.bilibili.nslg
+[2026-04-17 14:58:22.621 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=\\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 14:58:22.765 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:58:22.802 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:58:22.819 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(930,112), ClientSize=1024x512
+[2026-04-17 14:58:22.825 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(930,112,1024x512)]
+[2026-04-17 14:58:22.836 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:58:22.848 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:58:22.854 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:58:22.861 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:58:22.868 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:58:22.872 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:58:22.873 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:58:22.873 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:58:22.880 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:58:22.887 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:58:22.893 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:58:22.899 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:58:22.912 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:58:22.914 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:58:22.922 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:58:22.926 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:58:22.928 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:58:22.929 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:58:22.944 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:58:22.953 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:58:22.963 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:58:22.971 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(930,112,1024x512)]
+[2026-04-17 14:58:23.039 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(930,112), ClientSize=1024x512
+[2026-04-17 14:58:23.039 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] 开始截图: 窗口=0xC0568, 区域=(930,112,1024x512)
+[2026-04-17 14:58:23.065 DBG] [SGMDTXTools.Core.Services.DesktopDcCapturer] BitBlt完成, 耗时=26ms
+[2026-04-17 14:58:23.200 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图完成: 尺寸=1024x512, 大小=1290KB, 耗时=26ms
+[2026-04-17 14:58:23.209 INF] [SGMDTXTools.Core.Services.DesktopDcCapturer] 截图保存: \\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_145823_200.png, 尺寸=1024x512, 耗时=26ms
+[2026-04-17 14:58:23.313 DBG] [SGMDTXTools.Core.Services.GridOverlay] 网格绘制完成: 图片=1024x512, 网格=10x18, 单元格=102.4x28.4
+[2026-04-17 14:58:23.500 INF] [SGMDTXTools.Core.Services.GridOverlay] 网格截图已保存: \\Mac\Home\Documents\SGMDTXTools\screenshots\capture_20260417_145823_200_grid.png, 尺寸=1024x512, 网格=10x18
+[2026-04-17 14:58:23.512 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
+[2026-04-17 14:59:15.046 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 启动 ==========
+[2026-04-17 14:59:15.139 INF] [] DPI感知已由manifest设置, 无需重复配置
+[2026-04-17 14:59:15.140 INF] [SGMDTXTools.Console.Program] 目标进程: com.bilibili.nslg
+[2026-04-17 14:59:15.144 DBG] [SGMDTXTools.Core.Services.KnowledgeManager] 知识管理器初始化: 目录=\\Mac\Home\Documents\SGMDTXTools\knowledge
+[2026-04-17 14:59:15.324 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 开始查找进程: com.bilibili.nslg
+[2026-04-17 14:59:15.344 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到 1 个进程实例, PIDs: [1096]
+[2026-04-17 14:59:15.352 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xC0568, ClientOrigin=(930,112), ClientSize=1024x512
+[2026-04-17 14:59:15.355 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 找到游戏窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(930,112,1024x512)]
+[2026-04-17 14:59:15.356 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x180388, PID=1096
+[2026-04-17 14:59:15.359 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2802AC, PID=1096
+[2026-04-17 14:59:15.362 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x420604, PID=1096
+[2026-04-17 14:59:15.365 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x10052A, PID=1096
+[2026-04-17 14:59:15.365 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1D049A, PID=1096
+[2026-04-17 14:59:15.367 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1705D8, PID=1096
+[2026-04-17 14:59:15.367 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xC0564, PID=1096
+[2026-04-17 14:59:15.367 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1505A4, PID=1096
+[2026-04-17 14:59:15.367 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1C0646, PID=1096
+[2026-04-17 14:59:15.367 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 构建窗口信息: Handle=0xF02B8, ClientOrigin=(0,0), ClientSize=0x0
+[2026-04-17 14:59:15.368 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过零尺寸窗口: Handle=0xF02B8, Title=''
+[2026-04-17 14:59:15.368 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x12056E, PID=1096
+[2026-04-17 14:59:15.368 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x230408, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x1B05C6, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x9D0504, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xA05FC, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0xF05DC, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x905F2, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x705E8, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x2B04A4, PID=1096
+[2026-04-17 14:59:15.369 DBG] [SGMDTXTools.Core.Services.ProcessWindowLocator] 跳过不可见窗口: Handle=0x220536, PID=1096
+[2026-04-17 14:59:15.370 INF] [SGMDTXTools.Core.Services.ProcessWindowLocator] 选定主窗口: [Handle=0xC0568, PID=1096, Process='com.bilibili.nslg', Title='三国：谋定天下', Rect=(930,112,1024x512)]
+[2026-04-17 14:59:15.376 DBG] [SGMDTXTools.Core.Services.GridOverlay] 网格引用转像素: E9 -> (460,241), 图片尺寸=1024x512, 单元格=102.4x28.4
+[2026-04-17 14:59:15.378 INF] [SGMDTXTools.Console.Program] ========== SGMDTXTools 退出 ==========
