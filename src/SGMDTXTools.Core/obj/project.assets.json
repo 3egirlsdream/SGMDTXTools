@@ -254,33 +254,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jiangxinji\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/jiangxinji/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\Mac\\Home\\Documents\\SGMDTXTools\\src\\SGMDTXTools.Core\\SGMDTXTools.Core.csproj",
+      "projectUniqueName": "/Users/jiangxinji/Documents/SGMDTXTools/src/SGMDTXTools.Core/SGMDTXTools.Core.csproj",
       "projectName": "SGMDTXTools.Core",
-      "projectPath": "\\\\Mac\\Home\\Documents\\SGMDTXTools\\src\\SGMDTXTools.Core\\SGMDTXTools.Core.csproj",
-      "packagesPath": "C:\\Users\\jiangxinji\\.nuget\\packages\\",
-      "outputPath": "\\\\Mac\\Home\\Documents\\SGMDTXTools\\src\\SGMDTXTools.Core\\obj\\",
+      "projectPath": "/Users/jiangxinji/Documents/SGMDTXTools/src/SGMDTXTools.Core/SGMDTXTools.Core.csproj",
+      "packagesPath": "/Users/jiangxinji/.nuget/packages/",
+      "outputPath": "/Users/jiangxinji/Documents/SGMDTXTools/src/SGMDTXTools.Core/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\jiangxinji\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/jiangxinji/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet10/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -332,12 +326,22 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

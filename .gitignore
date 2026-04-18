@@ -26,3 +26,6 @@ TestResults/
 # NuGet
 *.nupkg
 packages/
+
+# Python venv (每台机器独立创建)
+python/venv/

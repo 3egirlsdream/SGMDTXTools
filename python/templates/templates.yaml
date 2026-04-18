@@ -1,0 +1,144 @@
+templates:
+- name: btn_return_city
+  file: btn_return_city.png
+  category: nav_button
+  threshold: 0.9
+  description: 回城按钮 - 返回主城
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 15
+    y: 455
+    width: 70
+    height: 45
+- name: btn_world
+  file: btn_world.png
+  category: nav_button
+  threshold: 0.75
+  description: 世界按钮 - 切换到世界地图
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 88
+    y: 430
+    width: 42
+    height: 70
+- name: btn_wujiang
+  file: btn_wujiang.png
+  category: nav_button
+  threshold: 0.8
+  description: 武将按钮 - 打开武将管理
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 498
+    y: 440
+    width: 78
+    height: 58
+- name: btn_tongmeng
+  file: btn_tongmeng.png
+  category: nav_button
+  threshold: 0.8
+  description: 同盟按钮 - 打开同盟界面
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 608
+    y: 440
+    width: 78
+    height: 58
+- name: btn_zhiye
+  file: btn_zhiye.png
+  category: nav_button
+  threshold: 0.8
+  description: 职业按钮 - 打开职业界面
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 725
+    y: 440
+    width: 68
+    height: 58
+- name: btn_zhengzhan
+  file: btn_zhengzhan.png
+  category: nav_button
+  threshold: 0.8
+  description: 征战按钮 - 打开征战界面
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 832
+    y: 440
+    width: 68
+    height: 58
+- name: btn_xunfang
+  file: btn_xunfang.png
+  category: nav_button
+  threshold: 0.8
+  description: 寻访按钮 - 打开寻访界面
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 940
+    y: 448
+    width: 72
+    height: 52
+- name: icon_lingdi
+  file: icon_lingdi.png
+  category: indicator
+  threshold: 0.85
+  description: 领地指示器 - 显示领地占用数
+  source_screenshot: capture_20260417_145823_200.png
+  source_region:
+    x: 165
+    y: 0
+    width: 105
+    height: 22
+- name: btn-head
+  file: btn-head.png
+  category: button
+  threshold: 0.8
+  description: 头像主页，点击进入个人详情页
+  source_screenshot: capture_20260418_101627_595.png
+  source_region:
+    x: 5
+    y: 13
+    width: 59
+    height: 49
+- name: btn-chat
+  file: btn-chat.png
+  category: button
+  threshold: 0.8
+  description: 世界按钮，点击展开聊天
+  source_screenshot: capture_20260417_153541_104.png
+  source_region:
+    x: 95
+    y: 444
+    width: 30
+    height: 39
+- name: btn_msg
+  file: btn_msg.png
+  category: button
+  threshold: 0.8
+  description: 邮件系统
+  source_screenshot: capture_20260417_153541_104.png
+  source_region:
+    x: 90
+    y: 400
+    width: 44
+    height: 40
+- name: btn-friend
+  file: btn-friend.png
+  category: button
+  threshold: 0.8
+  description: 好友列表
+  source_screenshot: capture_20260417_153541_104.png
+  source_region:
+    x: 142
+    y: 404
+    width: 36
+    height: 36
+- name: btn-activity
+  file: btn-activity.png
+  category: button
+  threshold: 0.8
+  description: 活动按钮，每日签到
+  source_screenshot: capture_20260417_153541_104.png
+  source_region:
+    x: 184
+    y: 50
+    width: 47
+    height: 41

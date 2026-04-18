@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGMDTXTools - 模板管理</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>SGMDTXTools 模板管理</h1>
+        <button id="btn-refresh" onclick="refreshAll()">刷新</button>
+    </header>
+
+    <main>
+        <aside id="sidebar">
+            <div class="sidebar-header">
+                <span id="template-count">模板库 (0)</span>
+                <input type="text" id="search-input" placeholder="搜索..." oninput="filterTemplates()">
+            </div>
+            <div id="template-list"></div>
+        </aside>
+
+        <section id="content">
+            <div id="viewer-area">
+                <canvas id="canvas"></canvas>
+                <div id="viewer-placeholder">选择一张截图开始</div>
+            </div>
+
+            <div id="toolbar">
+                <button onclick="runOcr()">运行 OCR</button>
+                <button onclick="runMatchAll()">匹配全部模板</button>
+                <button onclick="clearOverlays()">清除标注</button>
+            </div>
+
+            <div id="screenshot-strip">
+                <div id="screenshot-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span id="status-bar">就绪</span>
+    </footer>
+
+    <!-- 创建模板弹窗 -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div class="modal">
+            <h3>创建模板</h3>
+            <div class="modal-preview">
+                <canvas id="crop-preview" width="128" height="128"></canvas>
+            </div>
+            <label>名称 <input type="text" id="tpl-name" placeholder="如 close_btn"></label>
+            <label>类别
+                <select id="tpl-category">
+                    <option value="button">button</option>
+                    <option value="icon">icon</option>
+                    <option value="panel">panel</option>
+                    <option value="other">other</option>
+                </select>
+            </label>
+            <label>阈值 <input type="number" id="tpl-threshold" value="0.80" min="0.5" max="1.0" step="0.05"></label>
+            <label>描述 <input type="text" id="tpl-desc" placeholder="可选描述"></label>
+            <div class="modal-actions">
+                <button onclick="saveTemplate()">保存</button>
+                <button onclick="closeModal()">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

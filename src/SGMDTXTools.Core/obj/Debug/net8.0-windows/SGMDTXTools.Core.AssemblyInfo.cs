@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SGMDTXTools.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66972467d973244e6ed9d38ee5e90008b781e5a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SGMDTXTools.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SGMDTXTools.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
