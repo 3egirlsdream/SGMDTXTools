@@ -23,8 +23,7 @@ public class CommandHttpServer : IDisposable
     private readonly SendInputSimulator _inputSimulator;
     private readonly GridOverlay _gridOverlay;
     private readonly WindowResizer _windowResizer;
-    private readonly HttpScreenParser? _screenParser;
-    private readonly PythonServiceManager? _parserManager;
+    private readonly IScreenParser? _screenParser;
 
     // 配置
     private readonly string _processName;
@@ -51,8 +50,7 @@ public class CommandHttpServer : IDisposable
         SendInputSimulator inputSimulator,
         GridOverlay gridOverlay,
         WindowResizer windowResizer,
-        HttpScreenParser? screenParser,
-        PythonServiceManager? parserManager)
+        IScreenParser? screenParser)
     {
         _log = logger.ForContext<CommandHttpServer>();
         _port = port;
@@ -66,7 +64,6 @@ public class CommandHttpServer : IDisposable
         _gridOverlay = gridOverlay;
         _windowResizer = windowResizer;
         _screenParser = screenParser;
-        _parserManager = parserManager;
 
         _listener = new HttpListener();
         _listener.Prefixes.Add($"http://+:{_port}/");
@@ -183,6 +180,7 @@ public class CommandHttpServer : IDisposable
     private async Task HandleHealth(HttpListenerContext ctx)
     {
         var window = _locator.FindWindow(_processName);
+        bool parserReady = _screenParser != null && await _screenParser.IsAvailableAsync();
         await WriteJson(ctx.Response, 200, new
         {
             status = "ok",
@@ -190,7 +188,7 @@ public class CommandHttpServer : IDisposable
             window_found = window != null,
             window_size = window != null ? $"{window.Width}x{window.Height}" : null,
             target_size = $"{_targetWidth}x{_targetHeight}",
-            parser_running = _parserManager?.IsRunning ?? false
+            ocr_ready = parserReady
         });
     }
 
@@ -335,11 +333,9 @@ public class CommandHttpServer : IDisposable
     {
         if (_screenParser == null)
         {
-            await WriteJson(ctx.Response, 503, new { error = "Python 感知服务未配置" });
+            await WriteJson(ctx.Response, 503, new { error = "感知服务未配置" });
             return;
         }
-
-        await EnsureParserStarted();
 
         var window = FindAndResizeWindow();
         if (window == null)
@@ -366,11 +362,9 @@ public class CommandHttpServer : IDisposable
     {
         if (_screenParser == null)
         {
-            await WriteJson(ctx.Response, 503, new { error = "Python 感知服务未配置" });
+            await WriteJson(ctx.Response, 503, new { error = "感知服务未配置" });
             return;
         }
-
-        await EnsureParserStarted();
 
         var window = FindAndResizeWindow();
         if (window == null)
@@ -421,11 +415,9 @@ public class CommandHttpServer : IDisposable
     {
         if (_screenParser == null)
         {
-            await WriteJson(ctx.Response, 503, new { error = "Python 感知服务未配置" });
+            await WriteJson(ctx.Response, 503, new { error = "感知服务未配置" });
             return;
         }
-
-        await EnsureParserStarted();
 
         var window = FindAndResizeWindow();
         if (window == null)
@@ -503,15 +495,6 @@ public class CommandHttpServer : IDisposable
         }
 
         return window;
-    }
-
-    private async Task EnsureParserStarted()
-    {
-        if (_parserManager != null && !_parserManager.IsRunning)
-        {
-            _log.Information("自动启动 Python 感知服务...");
-            await _parserManager.EnsureStartedAsync();
-        }
     }
 
     private void TryDeleteFile(string path)

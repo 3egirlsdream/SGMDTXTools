@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Serilog;
 using SGMDTXTools.Core.Logging;
 using SGMDTXTools.Core.Models;
@@ -14,13 +13,16 @@ class Program
     private static GridOverlay _gridOverlay = null!;
     private static KnowledgeManager _knowledge = null!;
     private static SendInputSimulator _inputSimulator = null!;
-    private static HttpScreenParser? _screenParser;
-    private static PythonServiceManager? _parserManager;
     private static WindowResizer _windowResizer = null!;
+    private static OcrEngine _ocrEngine = null!;
+    private static TemplateStore _templateStore = null!;
+    private static TemplateMatcher _templateMatcher = null!;
+    private static IScreenParser? _screenParser;
     private static CommandHttpServer? _commandServer;
     private static CancellationTokenSource _cts = new();
     private static string _processName = string.Empty;
     private static string _screenshotDir = string.Empty;
+    private static string _templatesDir = string.Empty;
     private static int _targetClientWidth = 1280;
     private static int _targetClientHeight = 720;
 
@@ -66,22 +68,33 @@ class Program
             _inputSimulator = new SendInputSimulator(Log.Logger, _gridOverlay);
             _windowResizer = new WindowResizer(Log.Logger);
 
-            // 4.1 屏幕感知服务
+            // 4.1 屏幕感知服务 (本地 C# 实现)
             _screenshotDir = Path.Combine(Directory.GetCurrentDirectory(), "screenshots");
-            string pythonDir = Path.Combine(Directory.GetCurrentDirectory(), "python");
-            // 优先使用 venv 中的 Python（已安装 PaddleOCR 等依赖）
-            string venvPython = Path.Combine(pythonDir, "venv", "bin", "python3");
-            if (!File.Exists(venvPython))
-                venvPython = Path.Combine(pythonDir, "venv", "Scripts", "python.exe"); // Windows
-            if (!File.Exists(venvPython))
-                _log.Warning("未找到 Python venv，将使用系统 Python。如缺少依赖，请运行: cd python && bash setup_env.sh");
-            var parserConfig = new ScreenParserConfig
+            _templatesDir = Path.Combine(Directory.GetCurrentDirectory(), "templates");
+
+            _ocrEngine = new OcrEngine(Log.Logger);
+            try
             {
-                PythonServiceDir = pythonDir,
-                PythonExe = File.Exists(venvPython) ? venvPython : "python"
-            };
-            _parserManager = new PythonServiceManager(Log.Logger, parserConfig);
-            _screenParser = new HttpScreenParser(Log.Logger, parserConfig);
+                _ocrEngine.Initialize();
+            }
+            catch (Exception ex)
+            {
+                _log.Warning(ex, "PaddleOCR 初始化失败，OCR 功能不可用");
+                System.Console.WriteLine($"警告: PaddleOCR 初始化失败 — {ex.Message}");
+                System.Console.WriteLine("  模板匹配仍可正常使用，OCR 功能暂不可用");
+            }
+
+            _templateStore = new TemplateStore(Log.Logger, _templatesDir);
+            _templateMatcher = new TemplateMatcher(Log.Logger, _templateStore);
+            _screenParser = new LocalScreenParser(Log.Logger, _ocrEngine, _templateMatcher);
+
+            // 4.2 HTTP API 控制服务器
+            _commandServer = new CommandHttpServer(
+                Log.Logger, 5200, _processName, _screenshotDir,
+                _targetClientWidth, _targetClientHeight,
+                _locator, _capturer, _inputSimulator, _gridOverlay,
+                _windowResizer, _screenParser);
+            _commandServer.Start();
 
             // 5. Ctrl+C 优雅退出
             System.Console.CancelKeyPress += (_, e) =>
@@ -104,8 +117,10 @@ class Program
         {
             _log.Information("========== SGMDTXTools 退出 ==========");
             await Log.CloseAndFlushAsync();
+            _commandServer?.Dispose();
             _screenParser?.Dispose();
-            _parserManager?.Dispose();
+            _templateMatcher?.Dispose();
+            _ocrEngine?.Dispose();
             _capturer?.Dispose();
         }
     }
@@ -663,11 +678,9 @@ class Program
 
     static async Task EnsureParserAsync()
     {
-        if (_parserManager == null) return;
-        if (await _screenParser!.IsAvailableAsync(_cts.Token)) return;
-
-        System.Console.WriteLine("[启动 Python 感知服务...]");
-        await _parserManager.EnsureStartedAsync(_cts.Token);
+        if (_screenParser == null) return;
+        if (await _screenParser.IsAvailableAsync(_cts.Token)) return;
+        System.Console.WriteLine("警告: OCR 引擎未就绪，感知结果可能不完整");
     }
 
     static async Task HandleScan()
@@ -804,58 +817,22 @@ class Program
         switch (subCmd)
         {
             case "list":
-                await EnsureParserAsync();
-                try
+                var allTemplates = _templateStore.ListAll();
+                if (allTemplates.Count == 0)
                 {
-                    using var listHttp = new HttpClient { Timeout = TimeSpan.FromSeconds(5) };
-                    var resp = await listHttp.GetAsync("http://127.0.0.1:5100/api/templates", _cts.Token);
-                    var body = await resp.Content.ReadAsStringAsync(_cts.Token);
-                    var templates = System.Text.Json.JsonSerializer.Deserialize<System.Text.Json.JsonElement>(body);
-
-                    if (templates.ValueKind == System.Text.Json.JsonValueKind.Array)
-                    {
-                        if (templates.GetArrayLength() == 0)
-                        {
-                            System.Console.WriteLine("模板库为空，执行 template ui 添加模板");
-                            return;
-                        }
-                        System.Console.WriteLine($"模板库 ({templates.GetArrayLength()}个):");
-                        foreach (var t in templates.EnumerateArray())
-                        {
-                            string name = t.GetProperty("name").GetString() ?? "";
-                            string cat = t.TryGetProperty("category", out var c) ? c.GetString() ?? "" : "";
-                            double thresh = t.TryGetProperty("threshold", out var th) ? th.GetDouble() : 0.8;
-                            System.Console.WriteLine($"  {name,-20} {cat,-10} 阈值:{thresh:F2}");
-                        }
-                    }
+                    System.Console.WriteLine("模板库为空");
+                    return;
                 }
-                catch (Exception ex)
+                System.Console.WriteLine($"模板库 ({allTemplates.Count}个):");
+                foreach (var t in allTemplates)
                 {
-                    System.Console.WriteLine($"获取模板列表失败: {ex.Message}");
-                    System.Console.WriteLine("请先执行 parser start 启动服务");
+                    System.Console.WriteLine($"  {t.Name,-20} {t.Category,-10} 阈值:{t.Threshold:F2}  {t.Description}");
                 }
                 break;
 
-            case "ui":
-                System.Console.WriteLine("[截图中...]");
-                var capPath = CaptureForParser();
-                if (capPath != null)
-                    System.Console.WriteLine($"已保存: {Path.GetFileName(capPath)}");
-
-                System.Console.WriteLine("[确保 Python 服务运行中...]");
-                await EnsureParserAsync();
-
-                string url = "http://127.0.0.1:5100/";
-                try
-                {
-                    Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
-                    System.Console.WriteLine($"已打开浏览器: {url}");
-                }
-                catch
-                {
-                    System.Console.WriteLine($"无法自动打开浏览器，请手动访问: {url}");
-                }
-                System.Console.WriteLine("提示: 在网页中点击截图 → 框选按钮/图标区域 → 保存为模板");
+            case "reload":
+                _templateMatcher.Reload();
+                System.Console.WriteLine($"已重载模板库，共 {_templateStore.Count} 个模板");
                 break;
 
             case "test":
@@ -872,7 +849,6 @@ class Program
                     return;
                 }
 
-                await EnsureParserAsync();
                 System.Console.WriteLine($"[测试模板 '{testName}' 对最新截图...]");
                 var matchResult = await _screenParser!.MatchAsync(testImage, new[] { testName }, _cts.Token);
                 if (!matchResult.Success)
@@ -897,7 +873,7 @@ class Program
             default:
                 System.Console.WriteLine("模板命令:");
                 System.Console.WriteLine("  template list              列出所有模板");
-                System.Console.WriteLine("  template ui                截图 + 打开模板管理网页");
+                System.Console.WriteLine("  template reload            重载模板库");
                 System.Console.WriteLine("  template test <名称>       用最新截图测试模板");
                 break;
         }
@@ -905,55 +881,18 @@ class Program
 
     static async Task HandleParser(string[] parts)
     {
-        if (_parserManager == null)
-        {
-            System.Console.WriteLine("感知服务管理器未初始化");
-            return;
-        }
-
-        string subCmd = parts.Length > 1 ? parts[1].ToLower() : "status";
-
-        switch (subCmd)
-        {
-            case "start":
-                var (available, envMsg) = await _parserManager.CheckEnvironmentAsync();
-                if (!available)
-                {
-                    System.Console.WriteLine($"Python 环境不可用: {envMsg}");
-                    return;
-                }
-                System.Console.WriteLine($"Python 环境: {envMsg}");
-                await _parserManager.EnsureStartedAsync(_cts.Token);
-                System.Console.WriteLine("Python 感知服务已启动");
-                break;
-
-            case "stop":
-                await _parserManager.StopAsync(_cts.Token);
-                System.Console.WriteLine("Python 感知服务已停止");
-                break;
-
-            case "status":
-                string status = _parserManager.GetStatus();
-                System.Console.WriteLine($"Python 感知服务: {status}");
-                if (_parserManager.IsRunning)
-                {
-                    bool healthy = await _parserManager.CheckHealthAsync(_cts.Token);
-                    System.Console.WriteLine($"  健康检查: {(healthy ? "正常" : "异常")}");
-                }
-                break;
-
-            default:
-                System.Console.WriteLine("感知服务命令:");
-                System.Console.WriteLine("  parser start               启动 Python 服务");
-                System.Console.WriteLine("  parser stop                停止 Python 服务");
-                System.Console.WriteLine("  parser status              查看服务状态");
-                break;
-        }
+        System.Console.WriteLine("感知服务状态:");
+        bool ocrReady = _ocrEngine?.IsReady ?? false;
+        System.Console.WriteLine($"  OCR 引擎 (PaddleOCR): {(ocrReady ? "就绪" : "未就绪")}");
+        System.Console.WriteLine($"  模板库: {_templateStore?.Count ?? 0} 个模板");
+        System.Console.WriteLine($"  模板目录: {_templatesDir}");
+        bool available = _screenParser != null && await _screenParser.IsAvailableAsync(_cts.Token);
+        System.Console.WriteLine($"  感知服务整体: {(available ? "正常" : "部分不可用")}");
     }
 
     // ========== 状态与帮助 ==========
 
-    static async Task HandleStatus()
+    static Task HandleStatus()
     {
         System.Console.WriteLine($"目标进程: {_processName}");
 
@@ -991,16 +930,9 @@ class Program
         var stats = _knowledge.GetStats();
         System.Console.WriteLine($"知识文件: {stats.FileCount}个, {stats.TotalLines}行, {stats.TotalSizeBytes / 1024}KB");
 
-        if (_parserManager != null)
-        {
-            string parserStatus = _parserManager.GetStatus();
-            System.Console.WriteLine($"感知服务: {parserStatus}");
-            if (_parserManager.IsRunning)
-            {
-                bool healthy = await _parserManager.CheckHealthAsync(_cts.Token);
-                System.Console.WriteLine($"  健康检查: {(healthy ? "正常" : "异常")}");
-            }
-        }
+        System.Console.WriteLine($"OCR 引擎: {(_ocrEngine?.IsReady == true ? "就绪" : "未就绪")}");
+        System.Console.WriteLine($"模板库: {_templateStore?.Count ?? 0} 个模板");
+        return Task.CompletedTask;
     }
 
     static void PrintHelp()
@@ -1027,24 +959,13 @@ class Program
         System.Console.WriteLine("  match                      截图 + 全模板匹配");
         System.Console.WriteLine("  match <名称>               截图 + 指定模板匹配");
         System.Console.WriteLine("  template list              列出所有模板");
-        System.Console.WriteLine("  template ui                截图 + 打开模板管理网页");
+        System.Console.WriteLine("  template reload            重载模板库");
         System.Console.WriteLine("  template test <名称>       用最新截图测试模板");
-        System.Console.WriteLine("  parser start               启动 Python 感知服务");
-        System.Console.WriteLine("  parser stop                停止 Python 感知服务");
-        System.Console.WriteLine("  parser status              查看感知服务状态");
+        System.Console.WriteLine("  parser                     查看感知服务状态");
         System.Console.WriteLine("  ---- 知识库 ----");
         System.Console.WriteLine("  knowledge list             列出知识文件");
         System.Console.WriteLine("  knowledge read <文件>      读取知识文件");
         System.Console.WriteLine("  knowledge search <词>      搜索知识库");
-        System.Console.WriteLine("  knowledge stats            知识库统计");
-        System.Console.WriteLine("  knowledge context          预览LLM上下文");
-        System.Console.WriteLine("  ---- 其他 ----");
-        System.Console.WriteLine("  status                     显示当前状态");
-        System.Console.WriteLine("  help                       显示帮助");
-        System.Console.WriteLine("  quit                       退出");
-    }
-}
-}
         System.Console.WriteLine("  knowledge stats            知识库统计");
         System.Console.WriteLine("  knowledge context          预览LLM上下文");
         System.Console.WriteLine("  ---- 其他 ----");

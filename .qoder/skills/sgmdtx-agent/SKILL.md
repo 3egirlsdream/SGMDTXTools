@@ -9,24 +9,27 @@ description: "三国谋定天下"游戏自动化代理。通过截屏、OCR、�
 
 ## 工具总览
 
-所有工具通过 **Python HTTP API** (`http://127.0.0.1:5100`) 和 **shell 脚本** 调用。
+所有工具通过 **C# HTTP API** (`http://127.0.0.1:5200`) 调用。C# 控制台内部管理 Python 感知服务（OCR + 模板匹配）。
+
+> **前提**: 必须先启动 C# 控制台 (`dotnet run --project src/SGMDTXTools.Console -- <进程名>`)，所有脚本才能工作。可通过 `scripts/ensure_service.sh` 检查服务状态。
 
 ### 感知工具 (看)
 
 | 工具 | 用途 | 调用方式 |
 |------|------|----------|
-| 截屏 | 获取游戏当前画面 | `scripts/capture.sh` |
-| OCR | 识别画面中的文字 | `scripts/ocr.sh [截图路径]` |
-| 模板匹配 | 识别已知 UI 元素 | `scripts/match.sh [截图路径] [模板名...]` |
-| 全量感知 | OCR + 模板匹配一体化 | `scripts/scan.sh [截图路径]` |
+| 截屏 | 实时截取游戏画面 | `scripts/capture.sh` |
+| OCR | 截图 + 文字识别 | `scripts/ocr.sh [x,y,w,h]` |
+| 模板匹配 | 截图 + 匹配已知 UI 元素 | `scripts/match.sh [模板名...]` |
+| 全量感知 | 截图 + OCR + 模板匹配 | `scripts/scan.sh` |
 
 ### 操作工具 (做)
 
 | 工具 | 用途 | 调用方式 |
 |------|------|----------|
-| 点击 | 点击指定坐标 | `scripts/click.sh <x> <y>` |
+| 点击 | 点击指定坐标 | `scripts/click.sh <x> <y> [right]` |
 | 拖拽 | 从一个位置拖到另一个 | `scripts/drag.sh <x1> <y1> <x2> <y2>` |
 | 滚轮 | 在指定位置滚动 | `scripts/scroll.sh <x> <y> <up\|down> [次数]` |
+| 调整窗口 | 调整游戏窗口分辨率 | `scripts/resize.sh [WxH]` (默认 1280x720) |
 
 ### 知识工具 (记)
 
@@ -87,10 +90,10 @@ OCR 和模板匹配返回的 `bbox` 格式: `{"x", "y", "width", "height"}`，`c
 用户给出具体指令时执行。如"点击武将按钮"、"查看资源"。
 
 ```
-1. 截屏 → scan.sh
+1. scan.sh (自动截图 + 感知)
 2. 从感知结果找到目标 (OCR 文字匹配或模板匹配)
 3. 执行操作
-4. 截屏确认结果
+4. scan.sh 确认结果
 ```
 
 ## 已知 UI 元素 (模板库)
