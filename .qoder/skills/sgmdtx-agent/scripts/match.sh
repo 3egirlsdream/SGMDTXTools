@@ -1,20 +1,20 @@
 #!/bin/bash
-# 模板匹配 - 在截图中查找已知 UI 元素
-# 用法: match.sh [截图路径] [模板名1 模板名2 ...]
-PROJ_DIR="$(cd "$(dirname "$0")/../../../.." && pwd)"
-API="http://127.0.0.1:5100"
+# 模板匹配 - 截图 + 匹配指定模板
+# 用法: match.sh [模板名...]
+API="http://127.0.0.1:5200"
 
-IMAGE="${1:-$("$PROJ_DIR/.qoder/skills/sgmdtx-agent/scripts/capture.sh")}"
-if [ ! -f "$IMAGE" ]; then
-    echo "{\"error\": \"截图不存在: $IMAGE\"}" >&2
-    exit 1
-fi
-
-shift
-if [ $# -gt 0 ]; then
+if [ -n "$1" ]; then
     # 构建 JSON 数组
-    TEMPLATES=$(printf '%s\n' "$@" | jq -R . | jq -s .)
-    curl -s -X POST "$API/api/match" -F "image=@$IMAGE" -F "templates=$TEMPLATES"
+    TEMPLATES="[\"$1\""
+    shift
+    for t in "$@"; do
+        TEMPLATES="$TEMPLATES,\"$t\""
+    done
+    TEMPLATES="$TEMPLATES]"
+
+    curl -s -X POST "$API/api/match" \
+      -H "Content-Type: application/json" \
+      -d "{\"templates\":$TEMPLATES}"
 else
-    curl -s -X POST "$API/api/match" -F "image=@$IMAGE"
+    curl -s -X POST "$API/api/match"
 fi

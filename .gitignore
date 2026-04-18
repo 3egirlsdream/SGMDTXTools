@@ -29,3 +29,5 @@ packages/
 
 # Python venv (每台机器独立创建)
 python/venv/
+src/SGMDTXTools.Core/obj/
+src/SGMDTXTools.Core/bin/

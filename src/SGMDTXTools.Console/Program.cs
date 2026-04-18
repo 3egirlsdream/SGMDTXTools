@@ -17,6 +17,7 @@ class Program
     private static HttpScreenParser? _screenParser;
     private static PythonServiceManager? _parserManager;
     private static WindowResizer _windowResizer = null!;
+    private static CommandHttpServer? _commandServer;
     private static CancellationTokenSource _cts = new();
     private static string _processName = string.Empty;
     private static string _screenshotDir = string.Empty;
@@ -300,6 +301,10 @@ class Program
         System.Console.WriteLine($"目标客户区: {targetW}x{targetH}");
 
         var (wasResized, actualW, actualH) = _windowResizer.ResizeClientArea(window.Handle, targetW, targetH);
+
+        _targetClientWidth = targetW;
+        _targetClientHeight = targetH;
+        _commandServer?.UpdateTargetSize(targetW, targetH);
 
         if (wasResized)
             System.Console.WriteLine($"调整完成: {actualW}x{actualH}");
@@ -1031,6 +1036,15 @@ class Program
         System.Console.WriteLine("  knowledge list             列出知识文件");
         System.Console.WriteLine("  knowledge read <文件>      读取知识文件");
         System.Console.WriteLine("  knowledge search <词>      搜索知识库");
+        System.Console.WriteLine("  knowledge stats            知识库统计");
+        System.Console.WriteLine("  knowledge context          预览LLM上下文");
+        System.Console.WriteLine("  ---- 其他 ----");
+        System.Console.WriteLine("  status                     显示当前状态");
+        System.Console.WriteLine("  help                       显示帮助");
+        System.Console.WriteLine("  quit                       退出");
+    }
+}
+}
         System.Console.WriteLine("  knowledge stats            知识库统计");
         System.Console.WriteLine("  knowledge context          预览LLM上下文");
         System.Console.WriteLine("  ---- 其他 ----");

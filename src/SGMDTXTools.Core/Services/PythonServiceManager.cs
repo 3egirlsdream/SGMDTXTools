@@ -68,7 +68,7 @@ public class PythonServiceManager : IDisposable
         };
 
         // 设置环境变量
-        psi.Environment["SGMDTX_HOST"] = _config.Host;
+        psi.Environment["SGMDTX_HOST"] = "0.0.0.0"; // 绑定所有网卡，允许 VM 等外部访问
         psi.Environment["SGMDTX_PORT"] = _config.Port.ToString();
         psi.Environment["PYTHONUNBUFFERED"] = "1";
         psi.Environment["PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK"] = "True";
